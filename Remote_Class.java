@@ -2,6 +2,9 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.Scanner;
+
+//import com.sun.tools.jdeprscan.scan.Scan;
 
 public class Remote_Class
     extends UnicastRemoteObject
@@ -20,6 +23,13 @@ public class Remote_Class
     public int miMetodo2() throws RemoteException {
         // Aquí ponemos el código que queramos
         return 5;
+    }
+
+    public String mandarMensaje(String mensaje) throws RemoteException {
+        System.out.println("Llego el mensaje al server");
+        String respuesta =  "Llego tu mensaje!! :D \nMensaje: " + mensaje;
+
+        return respuesta;
     }
 
     public static void main(String[] args) {
